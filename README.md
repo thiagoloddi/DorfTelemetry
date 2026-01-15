@@ -12,13 +12,15 @@ This mod scans the current board and generates a **CSV export** with the frequen
 
 ## How to use
 
-Download `DorfTelemetry.dll` and place it inside the plugins dir (`<DorfRomantik_dir>/BepInEx/plugins)
+Download `DorfTelemetry_WithBepInEx.zip` and extracts all its contents inside the DorfRomantik game folder.
 
-Open a game and press `F8` to generate and export a .csv for that board
+If you already have BepInEx you can just download `DorfTelemetry.dll` and place it in the plugins folder.
+
+Open a game and press `F8` to generate and export a .csv
 
 ## CSV Export Location
 
-Exports are written to `<DorfRomantik_dir>/BepInEx/plugins/DorfTelemetryExports/`
+Exports are written to `<DorfRomantik_dir>/BepInEx/plugins/DorfTelemetry/exports`
 
 ## Tile Edge Codes
 
