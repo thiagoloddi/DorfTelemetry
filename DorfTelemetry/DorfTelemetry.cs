@@ -14,8 +14,6 @@ namespace DorfTelemetry
         private const string modName = "DorfTelemetry";
         private const string modVersion = "1.0.0";
 
-        private const bool debug = false;
-
         internal static DorfTelemetry Instance;
 
         private void Awake()
@@ -34,19 +32,11 @@ namespace DorfTelemetry
             Logger.LogInfo(msg);
         }
 
-        void Debug(string msg)
-        {
-            if (debug)
-            {
-                Logger.LogInfo(msg);
-            }
-        }
-
         private void WriteCSV(List<CSVData> data)
         {
             Log($"[Export] Writing CSV");
             // Folder inside plugins
-            string exportDir = Path.Combine(Paths.PluginPath, "DorfTelemetryExports");
+            string exportDir = Path.Combine(Paths.PluginPath, "DorfTelemetry", "exports");
             Directory.CreateDirectory(exportDir);
 
             string fileName = $"tile_counts_{System.DateTime.Now:yyyyMMdd_HHmmss}.csv";
@@ -96,7 +86,6 @@ namespace DorfTelemetry
 
             private void Start()
             {
-                Instance.Debug("Initializing Runner");
             }
 
             private void Update()
@@ -131,7 +120,6 @@ namespace DorfTelemetry
                 Dictionary<string, int> count = new Dictionary<string, int>();
                 List<CSVData> data = new List<CSVData>();
                 List<Tile> tiles = world.GetAllPlacedTiles();
-                Instance.Debug($"Generating Data -- {tiles.Count} tiles found");
 
                 foreach (Tile tile in tiles)
                 {
