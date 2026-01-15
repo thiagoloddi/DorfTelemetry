@@ -11,7 +11,7 @@ namespace DorfTelemetry
     public class DorfTelemetry : BaseUnityPlugin
     {
         private const string modGUID = "TL.DorfTelemetry";
-        private const string modName = "Dorf Telemetry";
+        private const string modName = "DorfTelemetry";
         private const string modVersion = "1.0.0";
 
         private const bool debug = false;
@@ -46,7 +46,7 @@ namespace DorfTelemetry
         {
             Log($"[Export] Writing CSV");
             // Folder inside plugins
-            string exportDir = Path.Combine(Paths.PluginPath, "exports");
+            string exportDir = Path.Combine(Paths.PluginPath, "DorfTelemetryExports");
             Directory.CreateDirectory(exportDir);
 
             string fileName = $"tile_counts_{System.DateTime.Now:yyyyMMdd_HHmmss}.csv";
